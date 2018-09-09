@@ -1,0 +1,53 @@
+<form [formGroup]="empForm" *ngIf="!submitted ">
+  <div class="">
+    <label for=""> Name</label>
+    <input type="text" formControlName="name">
+    <span class="" *ngIf="submitted && f.name.errors">
+      <span *ngIf="f.name.errors.required"> Required Filed </span>
+    </span>
+  </div>
+  <div>
+    <label for=""> Mobile</label>
+    <input type="text" formControlName="mobile">
+    <span *ngIf="submitted && f.mobile.errors">
+      <span *ngIf="f.mobile.errors.required">
+        Required Filed
+      </span>
+      <span *ngIf="f.mobile.errors.maxlength">
+        Max Lenght required
+      </span>
+    </span>
+  </div>
+  <div>
+    <label for=""> email</label>
+    <input type="email" formControlName="email">
+    <span *ngIf="submitted && f.mobile.errors">
+      <span *ngIf="f.email.errors.required">
+        Required Filed
+      </span>
+      <span *ngIf="f.email.errors.email">
+        email mandatory
+      </span>
+
+    </span>
+  </div>
+  <div>
+    <label for=""> dob </label>
+    <input type="text" formControlName="dob">
+    <span *ngIf="submitted && f.dob.errors">
+      <span *ngIf="f.dob.errors.required">
+          Required Filed
+      </span>
+
+    </span>
+  </div>
+  <button type="submit" (click)="submit()" >Submit </button>
+
+  
+
+</form>
+<div *ngIf="submitted">
+  <p> Submitted sucessfully</p>
+  <button (click)="addnew()"> ADD</button>
+  <button (click)="edit()"> Edit</button>
+</div>
