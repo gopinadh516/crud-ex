@@ -42,4 +42,11 @@
     </span>
   </div>
   <button type="submit" (click)="submit()" >Submit </button>
+
+  
+
 </form>
+<div *ngIf="submitted">
+  <p> Submitted sucessfully</p>
+  <button (click)="addnew()"> ADD</button>
+</div>
